@@ -6,8 +6,16 @@ punto.
 
 
 
-   Is
+   Is*
  |    | |
  
 | |   | _
     ?
+
+
+* Github lo formatta male, in realtà sarebbe
+|
+||
+||
+|_
+IS THIS LOSS?
