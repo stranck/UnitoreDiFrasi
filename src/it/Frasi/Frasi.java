@@ -10,14 +10,21 @@ import java.io.IOException;
 public class Frasi {
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		System.out.println("Start reading file.");
+		int video = 0;
+	    int live = 0;
 		try (BufferedReader br = new BufferedReader(new FileReader(args[0]))){
 		    String line;
+		    Boolean selector = false;
 		    while ((line = br.readLine()) != null) {
-		       add(line);
+		    	if(line.equals("_")) selector = true; else {
+		    		if(selector==false) video++; else live++;
+		    	}
+		    	add(line);
 		    }
 		}
 		System.out.println("File readed successfully.\nWriting it in a new file.");
 		System.out.println("Previsione output:\n");
+		System.out.println("Numero frasi video: "+video+"\nNumero frasi live: "+live+"\n");
 		System.out.println(completo+"\n");
 	    	File f = new File("output");
 	    	if(f.exists() && !f.isDirectory()){} else {
